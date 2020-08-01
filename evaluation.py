@@ -277,7 +277,20 @@ class evaluation(object):
         aps = 0
 
         # temp
-        class_map_temp = {1: 'Person', 2: 'Vehicle', 3: 'Dryer'}
+        train_dir = "/mydrive/ObjDetection/Train"
+        classfile = "classes.txt"
+        class_map_temp = {}
+
+        # Reading classes text file
+        with open(train_dir + '/' + classfile) as classiostream:
+            classcontent = classiostream.read()
+
+            index = 1
+            for classline in classcontent.split("\n"):
+                if classline != "":
+                    class_map_temp[index] = classline
+                    index += 1
+        #class_map_temp = {1: 'Personss', 2: 'Vehicle', 3: 'Dryer'}
 
         for label in range(1, self.cls):
             semantic_label = class_map_temp[label]

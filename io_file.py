@@ -1,11 +1,18 @@
 # coding=utf-8
 import xml.dom.minidom
 
+train_dir = "/mydrive/ObjDetection/Train"
+classfile = "classes.txt"
+class_map = {}
 
-# modify 'class_map' as you need
-class_map = {'Person': 'Person', 'Vehicle': 'Vehicle', 'Dryer': 'Dryer'}
+# Reading classes text file
+with open(train_dir + '/' + classfile) as classiostream:
+    classcontent = classiostream.read()
 
-
+    for classline in classcontent.split("\n"):
+        if classline != "":
+            class_map[classline] = classline
+            
 def parse_xml(xml_path):
     dom = xml.dom.minidom.parse(xml_path)
     root = dom.documentElement

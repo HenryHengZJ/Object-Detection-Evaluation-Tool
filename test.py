@@ -43,11 +43,11 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
-    args.dir = ['/Users/wangzhe/data/zhengdanongmu/eval/voc_coco_only/converted_voc_coco_only', '/Users/wangzhe/data/zhengdanongmu/eval/voc_coco_only/gt_voc_coco']
+    #args.dir = ['/Users/wangzhe/data/zhengdanongmu/eval/voc_coco_only/converted_voc_coco_only', '/Users/wangzhe/data/zhengdanongmu/eval/voc_coco_only/gt_voc_coco']
 
-    args.cls = 4
-    args.overlapRatio = 0.5
-    args.threshold = 0.5
+    #args.cls = 4
+    #args.overlapRatio = 0.5
+    #args.threshold = 0.5
     len(sys.argv)
     print ("Your Folder's path: {}".format(args.dir))
     print ("Overlap Ratio: {}".format(args.overlapRatio))
